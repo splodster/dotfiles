@@ -11,3 +11,12 @@ vim.keymap.set('i', "<M-h>", "<left>")
 vim.keymap.set('i', "<M-j>", "<down>")
 vim.keymap.set('i', "<M-k>", "<up>")
 vim.keymap.set('i', "<M-l>", "<right>")
+
+-- todo comments *rmb to put ':' after keyword*
+vim.keymap.set("n", "]t", function()
+    require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+    require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })

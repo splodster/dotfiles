@@ -1,4 +1,4 @@
-vim.opt.nu  = true
+vim.opt.nu  = true 
 vim.opt.rnu = true
 vim.opt.cursorline = true
 vim.opt.fillchars = {eob = " "}

@@ -3,7 +3,7 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim', 'BurntSushi/ripgrep', 'joshmedeski/telescope-smart-goto.nvim', 'nvim-telescope/telescope-file-browser.nvim', },
     config = function()
         local builtin = require('telescope.builtin')
-        local utils = require("telescope.utils")
+        local utils = require("telescope.utils") -- TODO delete
         vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
