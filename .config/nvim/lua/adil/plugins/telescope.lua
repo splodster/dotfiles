@@ -8,7 +8,6 @@ return {
         vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
         vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
         vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
-        vim.keymap.set("n", "<space>fw", ":Telescope file_browser prompt_title=wiki prompt_prefix=search>  path=~/wiki<CR>")
         require('telescope').setup{
             extensions = {
                 file_browser = {
@@ -24,9 +23,8 @@ return {
                     themes = 'dropdown',
                     hidden = 'true',
                 },
-
             },
-            require("telescope").load_extension "file_browser"
+            require('telescope').load_extension("ascii")
         }
     end
 }

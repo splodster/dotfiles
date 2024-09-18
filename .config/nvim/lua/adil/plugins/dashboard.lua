@@ -1,13 +1,16 @@
 return {
     'nvimdev/dashboard-nvim',
     event = 'VimEnter',
+    dependencies = {
+        {'MaximilianLloyd/ascii.nvim',
+        'MunifTanjim/nui.nvim',
+        'nvim-tree/nvim-web-devicons'}
+    },
     config = function()
         require('dashboard').setup {
                 theme = 'hyper',
                 config = {
-                    week_header = {
-                        enable = true,
-                    },
+                    header = require('ascii').art.text.neovim.sharp;
                     shortcut = {
                         { desc = '󰊳 Update', group = '@property', action = 'Lazy update', key = 'u' },
                         {
@@ -21,18 +24,21 @@ return {
                         {
                             desc = ' dotfiles',
                             group = 'Number',
-                            action = 'Telescope file_browser path=~/dotfiles hidden=true',
+                            action = 'e ~/dotfiles',
                             key = 'd',
                         },
                         {
                             desc = '  wiki',
                             group = 'Number',
-                            action = 'Telescope file_browser path=~/wiki hidden=true',
+                            action = 'e ~/wiki/index.md',
                             key = 'w',
                         },
                     },
+                    mru = {cwd_only = true},
+                    footer = {
+                        '',
+                        'unlocked modus operandi'},
                 },
         }
     end,
-    dependencies = { {'nvim-tree/nvim-web-devicons'}}
 }
