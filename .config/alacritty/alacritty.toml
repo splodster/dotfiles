@@ -3,7 +3,7 @@ program = "/bin/zsh"
 
 [window]
 
-opacity = 0.95
+opacity = 0.50
 
 [scrolling]
 

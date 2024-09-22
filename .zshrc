@@ -112,9 +112,6 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 fpath+=${ZDOTDIR:-~}/.zsh_functions
 
-
-fastfetch
-
 # Preview file content using bat (https://github.com/sharkdp/bat)
 export FZF_CTRL_T_OPTS="
   --walker-skip .git,node_modules,target

@@ -1,6 +1,6 @@
 return {
     "OXY2DEV/markview.nvim",
-    lazy = false,      -- Recommended
+    lazy = false, -- Recommended
     -- ft = "markdown" -- If you decide to lazy-load anyway
 
     dependencies = {
@@ -12,109 +12,33 @@ return {
     },
     config = function()
         require("markview").setup {
-            highlight_group = {
-                {
-                    group_name = "Heading1",
-                    value = { fg = "#1e1e2e", bg = "#a6e3a1" }
-                },
-                {
-                    group_name = "Heading1Corner",
-                    value = { fg = "#a6e3a1" }
-                },
-            },
             headings = {
                 enable = true,
-                shift_width = 0,
+                shift_width = 1,
 
                 heading_1 = {
-                    style = "label",
-
-                    padding_left = " ",
-                    padding_right = " ",
-
-                    corner_right = "",
-                    corner_right_hl = "Heading1",
-
-                    corner_left = "",
-                    corner_left_hl = "Heading1",
-
-
-                    hl = "MarkviewHeading1"
+                    style = "simple",
+                    hl = "MarkviewHeading3"
                 },
                 heading_2 = {
-                    style = "label",
-
-                    padding_left = " ",
-                    padding_right = " ",
-
-                    corner_right = "",
-                    corner_right_hl = "Heading2",
-
-                    corner_left = "",
-                    corner_left_hl = "Heading2",
-
-
-                    hl = "MarkviewHeading2"
+                    style = "simple",
+                    hl = "MarkviewHeading3"
                 },
                 heading_3 = {
-                    style = "label",
-
-                    padding_left = " ",
-                    padding_right = " ",
-
-                    corner_right = "",
-                    corner_right_hl = "Heading3",
-
-                    corner_left = "",
-                    corner_left_hl = "Heading3",
-
-
+                    style = "simple",
                     hl = "MarkviewHeading3"
                 },
                 heading_4 = {
-                    style = "label",
-
-                    padding_left = " ",
-                    padding_right = " ",
-
-                    corner_right = "",
-                    corner_right_hl = "Heading4",
-
-                    corner_left = "",
-                    corner_left_hl = "Heading4",
-
-
-                    hl = "MarkviewHeading4"
+                    style = "simple",
+                    hl = "MarkviewHeading3"
                 },
                 heading_5 = {
-                    style = "label",
-
-                    padding_left = " ",
-                    padding_right = " ",
-
-                    corner_right = "",
-                    corner_right_hl = "Heading5",
-
-                    corner_left = "",
-                    corner_left_hl = "Heading5",
-
-
-                    hl = "MarkviewHeading5"
+                    style = "simple",
+                    hl = "MarkviewHeading3"
                 },
                 heading_6 = {
-                    style = "label",
-
-                    padding_left = " ",
-                    padding_right = " ",
-
-                    corner_right = "",
-                    corner_right_hl = "Heading6",
-
-                    corner_left = "",
-                    corner_left_hl = "Heading6",
-
-
-                    hl = "MarkviewHeading6"
+                    style = "simple",
+                    hl = "MarkviewHeading3"
                 },
             },
             code_blocks = {
@@ -129,25 +53,23 @@ return {
                 language_direction = "left",
                 language_names = {},
 
-                hl = "CursorLine",
+                hl = "cursorline",
                 sign = true,
                 sign_hl = nil
             },
             inline_codes = {
                 enable = true,
-                hl = "DiagnosticOk",
-
-                corner_left = nil,
-                corner_left_hl = nil,
-
-                padding_left = " ",
-                padding_left_hl = nil,
-
-                padding_right = " ",
-                padding_right_hl = nil,
-
-                corner_right = nil,
-                corner_right_hl = nil
+                hl = "MarkviewInlineCode",
+            },
+            links = {
+                enable = true,
+                hyperlinks = {
+                    hl = "DiagnosticOk",
+                },
+                images = {
+                    hl = "DiagnosticOk",
+                },
+                emails = {}
             },
             latex = {
                 enable = true,
@@ -162,44 +84,44 @@ return {
                     closing = {
                         { ")", "MarkviewHeading1Sign" },
                         { "}", "MarkviewHeading2Sign" },
-                        { "]", "MarkviewHeading3" },
+                        { "]", "MarkviewHeading3Sign" },
                     },
 
                     -- scope = {
-                        --  "DiagnosticVirtualTextError",
-                        --  "DiagnosticVirtualTextOk",
-                        --  "DiagnosticVirtualTextWarn",
-                        -- }
-                    },
+                    --  "DiagnosticVirtualTextError",
+                    --  "DiagnosticVirtualTextOk",
+                    --  "DiagnosticVirtualTextWarn",
+                    -- }
+                },
 
-                    -- Hides $$ inside lines
-                    inline = {
-                        enable = true
-                    },
+                -- Hides $$ inside lines
+                inline = {
+                    enable = true
+                },
 
-                    -- Highlights lines within $$ $$
-                    block = {
-                        hl = "DiagnosticOk",
-                        text = { " Latex ", "Special" }
-                    },
+                -- Highlights lines within $$ $$
+                block = {
+                    hl = "DiagnosticOk",
+                    text = { " Latex ", "Special" }
+                },
 
-                    -- Symbols, e.g. \geq
-                    symbols = {
-                        enable = true,
-                        -- Your own set of symbols, e.g.
-                        -- {
-                            --   name = "symbol"
-                            -- }
-                            overwrite = {}
-                        },
+                -- Symbols, e.g. \geq
+                symbols = {
+                    enable = true,
+                    -- Your own set of symbols, e.g.
+                    -- {
+                    --   name = "symbol"
+                    -- }
+                    overwrite = {}
+                },
 
-                        subscript = {
-                            enable = true
-                        },
-                        superscript = {
-                            enable = true
-                        },
-                    }
-                }
-            end
+                subscript = {
+                    enable = true
+                },
+                superscript = {
+                    enable = true
+                },
+            }
         }
+    end
+}
