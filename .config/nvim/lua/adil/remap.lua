@@ -14,9 +14,27 @@ vim.keymap.set('n', "<C-cr>", function()
     if (vim.bo.filetype == "cpp") then
         vim.cmd("w")
         vim.cmd(':FloatermNew --title=Compiled_Output --autoclose=0 g++ % -o %< && ./%<')
+    elseif (vim.bo.filetype == "cs") then
+        vim.cmd("w")
+        vim.cmd(':FloatermNew --title=Compiled_Output --autoclose=0 dotnet run %')
+    elseif (vim.bo.filetype == "markdown") then
+        vim.cmd("w")
+        vim.cmd('!pandoc % -o %<.pdf')
+        vim.api.nvim_feedkeys('<CR>', 'n', true)
     end
 end
 )
+
+local au = vim.api.nvim_create_autocmd
+local ag = vim.api.nvim_create_augroup
+
+
+    au("BufWritePost", {
+        desc = "Compile Pandoc",
+        group = ag("project", {}),
+        pattern = "*.md",
+        command = "w | !pandoc % -o %<.pdf "
+    })
 
 -- open obsidian file finder
 vim.keymap.set('n', "<Space>ow", ":ObsidianQuickSwitch <cr>")
