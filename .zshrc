@@ -13,7 +13,9 @@ export NVM_DIR="$HOME/.nvm"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#
+
+alias v='nvim'
 
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/zen.toml)"
