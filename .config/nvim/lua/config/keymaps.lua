@@ -10,7 +10,7 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 -- dw but from the end of the word
-keymap.set("n", "dw", "vb_d")
+keymap.set("n", "dw", "vbd")
 
 -- select all
 keymap.set("n", "<C-a>", "gg<S-v>G")
@@ -32,3 +32,17 @@ keymap.set("n", "sh", "<C-w>H")
 keymap.set("n", "sk", "<C-w>K")
 keymap.set("n", "sj", "<C-w>J")
 keymap.set("n", "sl", "<C-w>L")
+
+keymap.set("n", "<C-cr>", function()
+  if vim.bo.filetype == "cpp" then
+    vim.cmd("w")
+    vim.cmd(":FloatermNew --title=Compiled_Output --autoclose=0 g++ % -o %< && ./%<")
+  elseif vim.bo.filetype == "cs" then
+    vim.cmd("w")
+    vim.cmd(":FloatermNew --title=Compiled_Output --autoclose=0 dotnet run %")
+  elseif vim.bo.filetype == "markdown" then
+    vim.cmd("w")
+    vim.cmd("!pandoc % -o %<.pdf")
+    vim.api.nvim_feedkeys("<CR>", "n", true)
+  end
+end)
