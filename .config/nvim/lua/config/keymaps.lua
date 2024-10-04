@@ -33,10 +33,13 @@ keymap.set("n", "sk", "<C-w>K")
 keymap.set("n", "sj", "<C-w>J")
 keymap.set("n", "sl", "<C-w>L")
 
-keymap.set("n", "<C-cr>", function()
+keymap.set("n", "<leader><cr>", function()
   if vim.bo.filetype == "cpp" then
     vim.cmd("w")
-    vim.cmd(":FloatermNew --title=Compiled_Output --autoclose=0 g++ % -o %< && ./%<")
+    vim.cmd(":FloatermNew --autoclose=0 g++ % -o %< && ./%<")
+  elseif vim.bo.filetype == "c" then
+    vim.cmd("w")
+    vim.cmd(":FloatermNew --autoclose=0 gcc % -o %< && ./%<")
   elseif vim.bo.filetype == "cs" then
     vim.cmd("w")
     vim.cmd(":FloatermNew --title=Compiled_Output --autoclose=0 dotnet run %")

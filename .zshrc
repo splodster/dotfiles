@@ -16,8 +16,7 @@ export NVM_DIR="$HOME/.nvm"
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#
 
 alias v='nvim'
-
-alias dev='tmux splitw && tmux splitw && tmux splitw && tmux select-layout main-horizontal && tmux select-pane -U && tmux resize-pane -D 15'
+alias dev='tmux splitw && tmux splitw && tmux splitw && tmux select-layout main-horizontal && tmux select-pane -U'
 
 
 eval "$(oh-my-posh init zsh --config $HOME/.config/zen.toml)"

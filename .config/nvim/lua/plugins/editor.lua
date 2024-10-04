@@ -40,8 +40,9 @@ return {
       })
     end,
   },
-  { "akinsho/toggleterm.nvim", version = "*", config = true },
-  { "voldikss/vim-floaterm" },
+  {
+    "voldikss/vim-floaterm",
+  },
   {
     "nvimdev/dashboard-nvim",
     event = "VimEnter",
