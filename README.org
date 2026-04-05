@@ -1,3 +1,24 @@
 #+title: dotfiles
 
-* Dotfiles
+* Installs
+** zsh
+
+** rust
+#+BEGIN_SRC zsh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+#+END_SRC
+** neovim
+Install bob:
+#+BEGIN_SRC zsh
+curl -fsSL https://raw.githubusercontent.com/MordechaiHadad/bob/master/scripts/install.sh | bash
+#+END_SRC
+
+Install neovim:
+#+BEGIN_SRC zsh
+bob install latest
+
+# paste this into .zshrc
+alias nvim="~/.local/share/bob/v0.12.0/bin/nvim"
+#+END_SRC
+** doom emacs
+** i3wm
